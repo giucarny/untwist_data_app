@@ -37,7 +37,12 @@ A key feature of the app is that aggregation is always performed at the **docume
 
 This means that the app does not aggregate at the sentence level. Instead, it counts sentence-level annotations within each document and returns one row per document in the aggregated output.
 
-### Requirements and Setup
+
+---
+
+## 2. Initialisation
+
+### 2.0 Requirements and Setup
 
 #### Python
 You need **Python 3.9 or higher**.
@@ -77,9 +82,6 @@ Then install packages:
 pip install pandas PySide6
 ```
 
----
-
-## 2. Initialisation
 
 ### 2.1. Open a terminal
 
