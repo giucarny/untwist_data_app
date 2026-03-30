@@ -23,32 +23,43 @@ A key feature of the app is that aggregation is always performed at the **docume
 
 This means that the app does not aggregate at the sentence level. Instead, it counts sentence-level annotations within each document and returns one row per document in the aggregated output.
 
+---
+
 ## 1. Initialisation
 
-### 1.1. Open the command prompt
+### 1.1. Open a terminal
 
-Open **Command Prompt** and move to the relevant folders.
+Open a terminal (e.g., Command Prompt, PowerShell, or Terminal).
 
-### 1.2. Activate the environment
+### 1.2. Navigate to the application folder
 
-Use the following commands:
+Move to the directory where the application file (`app_v3.py`) is located:
 
 ```cmd
-cd C:/Users/user/Documents/GIT/UNTWIST/WP4/pythonapp/untwist_data_app/scripts/
+cd path/to/your/application/folder
+```
+
+### 1.3. Activate your Python environment (if applicable)
+
+If you are using a virtual environment or conda environment, activate it:
+
+```cmd
 activate
-cd C:/Users/user/Documents/GIT/UNTWIST/WP4/pythonapp/
-python app_v3.py
+# or
+conda activate <your_environment_name>
 ```
 
-### 1.3. Launch the application
+### 1.4. Launch the application
 
-After running:
+Run:
 
 ```cmd
 python app_v3.py
 ```
 
-the application window should open.
+The application window should then open.
+
+---
 
 ## 2. Main structure of the interface
 
@@ -72,6 +83,8 @@ This is the output area. It includes:
 - the results table
 - export buttons
 - a progress bar during loading
+
+---
 
 ## 3. Loading the dataset
 
@@ -110,6 +123,8 @@ While loading, the app:
 
 Once loading is complete, the status label will indicate how many rows were loaded.
 
+---
+
 ## 4. Filtering the dataset
 
 Filtering and aggregation are handled separately.
@@ -124,6 +139,8 @@ This means that filtering answers the question:
 
 Aggregation answers the question:  
 **“Across which dimensions do I want to count the retained rows?”**
+
+---
 
 ## 5. How to use filters
 
@@ -163,6 +180,8 @@ This will keep only rows belonging to the selected project and domain.
 ### Topic filtering and domain filtering
 If both **Domain** and **Topic** are selected as filters, the topic menu updates dynamically when the domain changes. This helps ensure that the topic choices correspond to the selected domain.
 
+---
+
 ## 6. How to use aggregation
 
 ### Step 1
@@ -188,6 +207,8 @@ If the table is in aggregated mode, the app will:
 ### Default behaviour
 If no aggregation dimension is selected, the app defaults to aggregating by **Domain**.
 
+---
+
 ## 7. How aggregation works
 
 Aggregation is always performed at the document level.
@@ -203,26 +224,7 @@ Each row in the aggregated output represents one unique document identified by:
 
 The additional columns in the aggregated table represent counts of sentence-level annotations within that document.
 
-### Example 1: aggregation by Domain
-If you select only **Domain** as aggregation dimension, the output will contain one row per document and separate count columns for each domain.
-
-### Example 2: aggregation by Domain and Connotation
-If you select **Domain** and **Connotation**, the output will still contain one row per document, but now the count columns will correspond to combinations such as:
-
-- `1 - Labour Market | 1`
-- `1 - Labour Market | 2`
-- `1 - Labour Market | 3`
-- `2 - Welfare and family | 1`
-- etc.
-
-### Example 3: filtering and aggregating together
-You may:
-
-- filter to project = `EM`
-- filter to connotation = `1`
-- aggregate by **Domain** and **Topic**
-
-In that case, the app keeps only rows matching the selected project and connotation, and then counts them by domain-topic combination within each document.
+---
 
 ## 8. Showing results
 
@@ -238,6 +240,8 @@ This shows the filtered dataset in non-aggregated form.
 
 Only the first 1000 rows are displayed in the table for inspection, but exports are not limited to those visible rows.
 
+---
+
 ## 9. Switching between views
 
 Use the button above the table:
@@ -245,123 +249,26 @@ Use the button above the table:
 - **Switch to CSV View**
 - **Switch to Aggregated View**
 
-This lets you move between:
-
-- the filtered sentence-level dataset;
-- the document-level aggregated dataset.
-
-This is useful when you want to compare the raw filtered rows with the aggregated output.
+---
 
 ## 10. Exporting results
 
-The app provides two export options.
-
 ### Export Filtered CSV
-This exports the filtered dataset in non-aggregated form.
-
-Use this when you want the retained rows exactly as filtered.
+Exports the filtered dataset (non-aggregated).
 
 ### Export Aggregated CSV
-This exports the document-level aggregated table.
+Exports the document-level aggregated dataset.
 
-Use this when you want counts summarised by the chosen aggregation dimensions.
+---
 
-### Important note
-The export buttons become active after results are shown.
+## 11. Summary
 
-## 11. Recommended workflow
+The app workflow is:
 
-A typical workflow is the following.
+1. load the CSV;
+2. optionally filter;
+3. optionally aggregate;
+4. view results;
+5. export outputs.
 
-### Option A: inspect raw filtered data
-1. Load the CSV file.
-2. Select one or more filters.
-3. Click **Update Filter Menus**.
-4. Choose filter values.
-5. Click **Show Results**.
-6. Switch to **CSV View** if needed.
-7. Export the filtered CSV if required.
-
-### Option B: create document-level aggregates
-1. Load the CSV file.
-2. Select one or more filters if needed.
-3. Click **Update Filter Menus**.
-4. Choose filter values.
-5. Select one or more aggregation dimensions.
-6. Click **Show Results**.
-7. Stay in aggregated view.
-8. Export the aggregated CSV.
-
-## 12. Practical examples
-
-### Example 1: all documents aggregated by domain
-1. Load the CSV.
-2. Do not apply any filters.
-3. Tick **Domain** in Aggregation Dimensions.
-4. Click **Show Results**.
-
-Result: one row per document, with counts by domain.
-
-### Example 2: European Parliament manifestos only, aggregated by topic
-1. Load the CSV.
-2. Tick **Project / Manifesto** under Filters.
-3. Click **Update Filter Menus**.
-4. Select `EM`.
-5. Tick **Topic** under Aggregation Dimensions.
-6. Click **Show Results**.
-
-Result: one row per document within the EM subset, with counts by topic.
-
-### Example 3: labour-market content only, aggregated by connotation
-1. Load the CSV.
-2. Tick **Domain** under Filters.
-3. Click **Update Filter Menus**.
-4. Select `1 - Labour Market`.
-5. Tick **Connotation** under Aggregation Dimensions.
-6. Click **Show Results**.
-
-Result: one row per document, counting only labour-market rows by connotation.
-
-## 13. Notes on variable handling
-
-### Domains
-The app converts numeric domain values into descriptive labels, such as:
-
-- `0 - No category applies`
-- `1 - Labour Market`
-- `2 - Welfare and family`
-- `3 - Participation and Representation`
-- `4 - Rights, Discrimination, and Violence`
-- `5 - Gender-related notions`
-
-### Topics
-Topics are remapped into a global topic scale and displayed with descriptive names.
-
-### Connotation
-Connotation values are internally remapped before display and aggregation.
-
-## 14. Troubleshooting
-
-### Nothing happens after changing filters
-After ticking filter dimensions, always click **Update Filter Menus** so that the dropdown menus are rebuilt.
-
-### No results found
-If the combination of filters is too restrictive, the app will return no rows. In that case, relax one or more filters.
-
-### Aggregation dimensions changed but results look the same
-Make sure to click **Show Results** again after changing the aggregation dimensions.
-
-### The table shows only 1000 rows in CSV view
-This is only a display limit for the interface. Exported filtered CSV files are not restricted to the first 1000 rows.
-
-## 15. Summary
-
-The app is intended as a practical interface to inspect and summarise the manifesto dataset before deployment. Its main logic is:
-
-1. load the original CSV;
-2. optionally filter the data;
-3. optionally aggregate the filtered data;
-4. display either raw or aggregated output;
-5. export the result.
-
-The most important thing to keep in mind is that **aggregation is always document-based**, not sentence-based. The app therefore helps transform sentence-level annotations into document-level summaries while still allowing inspection of the underlying filtered data.
+Aggregation is always performed at the document level.
