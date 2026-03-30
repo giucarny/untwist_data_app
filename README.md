@@ -1,5 +1,19 @@
 # Manifesto Topics Analyzer – User Guide
 
+## Table of Contents
+1. [Overview](#overview)
+2. [Initialisation](#1-initialisation)
+3. [Main structure of the interface](#2-main-structure-of-the-interface)
+4. [Loading the dataset](#3-loading-the-dataset)
+5. [Filtering the dataset](#4-filtering-the-dataset)
+6. [How to use filters](#5-how-to-use-filters)
+7. [How to use aggregation](#6-how-to-use-aggregation)
+8. [How aggregation works](#7-how-aggregation-works)
+9. [Showing results](#8-showing-results)
+10. [Switching between views](#9-switching-between-views)
+11. [Exporting results](#10-exporting-results)
+12. [Summary](#11-summary)
+
 ## Overview
 
 The **Manifesto Topics Analyzer** is a desktop application built in Python with PySide6 to explore, filter, and aggregate the UNTWIST WP4 manifesto dataset. It is designed to make the dataset easier to inspect before deployment through a simple graphical interface.
