@@ -14,7 +14,7 @@
 11. [Exporting results](#10-exporting-results)
 12. [Summary](#11-summary)
 
-## Overview
+## 1. Overview
 
 The **Manifesto Topics Analyzer** is a desktop application built in Python with PySide6 to explore, filter, and aggregate the UNTWIST WP4 manifesto dataset. It is designed to make the dataset easier to inspect before deployment through a simple graphical interface.
 
@@ -39,13 +39,13 @@ This means that the app does not aggregate at the sentence level. Instead, it co
 
 ---
 
-## 1. Initialisation
+## 2. Initialisation
 
-### 1.1. Open a terminal
+### 2.1. Open a terminal
 
 Open a terminal (e.g., Command Prompt, PowerShell, or Terminal).
 
-### 1.2. Navigate to the application folder
+### 2.2. Navigate to the application folder
 
 Move to the directory where the application file (`app_v3.py`) is located:
 
@@ -53,7 +53,7 @@ Move to the directory where the application file (`app_v3.py`) is located:
 cd path/to/your/application/folder
 ```
 
-### 1.3. Activate your Python environment (if applicable)
+### 2.3. Activate your Python environment (if applicable)
 
 If you are using a virtual environment or conda environment, activate it:
 
@@ -63,7 +63,7 @@ activate
 conda activate <your_environment_name>
 ```
 
-### 1.4. Launch the application
+### 2.4. Launch the application
 
 Run:
 
@@ -75,7 +75,7 @@ The application window should then open.
 
 ---
 
-## 2. Main structure of the interface
+## 3. Main structure of the interface
 
 The interface is divided into two main parts.
 
@@ -100,7 +100,7 @@ This is the output area. It includes:
 
 ---
 
-## 3. Loading the dataset
+## 4. Loading the dataset
 
 ### Step 1
 Click **Load CSV File**.
@@ -139,7 +139,7 @@ Once loading is complete, the status label will indicate how many rows were load
 
 ---
 
-## 4. Filtering the dataset
+## 5. Filtering the dataset
 
 Filtering and aggregation are handled separately.
 
@@ -156,7 +156,7 @@ Aggregation answers the question:
 
 ---
 
-## 5. How to use filters
+## 6. How to use filters
 
 ### Step 1
 In the **Filters** section, tick the variables for which you want a dropdown menu to appear.
@@ -196,7 +196,7 @@ If both **Domain** and **Topic** are selected as filters, the topic menu updates
 
 ---
 
-## 6. How to use aggregation
+## 7. How to use aggregation
 
 ### Step 1
 In the **Aggregation Dimensions** section, tick the dimensions that should define the aggregated columns.
@@ -223,7 +223,7 @@ If no aggregation dimension is selected, the app defaults to aggregating by **Do
 
 ---
 
-## 7. How aggregation works
+## 8. How aggregation works
 
 Aggregation is always performed at the document level.
 
@@ -240,7 +240,7 @@ The additional columns in the aggregated table represent counts of sentence-leve
 
 ---
 
-## 8. Showing results
+## 9. Showing results
 
 After selecting filters and/or aggregation dimensions, click **Show Results**.
 
@@ -256,7 +256,7 @@ Only the first 1000 rows are displayed in the table for inspection, but exports 
 
 ---
 
-## 9. Switching between views
+## 10. Switching between views
 
 Use the button above the table:
 
@@ -265,7 +265,7 @@ Use the button above the table:
 
 ---
 
-## 10. Exporting results
+## 11. Exporting results
 
 ### Export Filtered CSV
 Exports the filtered dataset (non-aggregated).
@@ -275,7 +275,7 @@ Exports the document-level aggregated dataset.
 
 ---
 
-## 11. Summary
+## 12. Summary
 
 The app workflow is:
 
