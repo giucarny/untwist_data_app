@@ -1,4 +1,4 @@
-# Manifesto Topics Analyzer – User Guide
+# Manifesto Gender Analysis (MGA) Aggregation Tool
 
 ## Table of Contents
 1. [Overview](#overview)
