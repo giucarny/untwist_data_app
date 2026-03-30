@@ -1,18 +1,18 @@
 # Manifesto Gender Analysis (MGA) Aggregation Tool
 
 ## Table of Contents
-1. [Overview](#overview)
-2. [Initialisation](#1-initialisation)
-3. [Main structure of the interface](#2-main-structure-of-the-interface)
-4. [Loading the dataset](#3-loading-the-dataset)
-5. [Filtering the dataset](#4-filtering-the-dataset)
-6. [How to use filters](#5-how-to-use-filters)
-7. [How to use aggregation](#6-how-to-use-aggregation)
-8. [How aggregation works](#7-how-aggregation-works)
-9. [Showing results](#8-showing-results)
-10. [Switching between views](#9-switching-between-views)
-11. [Exporting results](#10-exporting-results)
-12. [Summary](#11-summary)
+1. [Overview](#1-overview)
+2. [Initialisation](#2-initialisation)
+3. [Main structure of the interface](#3-main-structure-of-the-interface)
+4. [Loading the dataset](#4-loading-the-dataset)
+5. [Filtering the dataset](#5-filtering-the-dataset)
+6. [How to use filters](#6-how-to-use-filters)
+7. [How to use aggregation](#7-how-to-use-aggregation)
+8. [How aggregation works](#8-how-aggregation-works)
+9. [Showing results](#9-showing-results)
+10. [Switching between views](#10-switching-between-views)
+11. [Exporting results](#11-exporting-results)
+12. [Summary](#12-summary)
 
 ## 1. Overview
 
